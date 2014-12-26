@@ -1,5 +1,9 @@
 @extends('layouts.construct')
 
+@section('page_subtitle')
+#{{ $chan }}
+@stop
+
 @section('search-input')
 <input name="search" value="{{ isset($search) ? $search : null }}" class="header-search"
        action="{{ URL::to($chan . '/search/') }}" contenteditable placeholder="PHP Taiwan Slack logs @yield('page_subtitle')" autofocus autocomplete="off"
