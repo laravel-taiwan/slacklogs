@@ -11,3 +11,6 @@
 |
 */
 
+Artisan::add(new LoadChannelsCommand);
+Artisan::add(new LoadMembersCommand);
+Artisan::add(new LoadMessagesCommand);

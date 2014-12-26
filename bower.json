@@ -1,0 +1,11 @@
+{
+  "name": "slacklogs",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "latest",
+    "jquery-linkify": "git://github.com/uudashr/jquery-linkify.git",
+    "jquery-waypoints": "2.0.2",
+    "normalize-css": "latest",
+    "bower-compass-core": "~0.0.1"
+  }
+}

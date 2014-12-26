@@ -6,3 +6,9 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
+.idea
+node_modules
+npm-debug.log
+public/css
+public/js
+public/components
