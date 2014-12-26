@@ -51,7 +51,7 @@ class LoadMessagesCommand extends Command {
 
         foreach ($channels as $channel)
         {
-            $latest = $channel->lastest ?: 0;
+            $latest = $channel->latest ?: 0;
 
             do {
                 $response = $commander->execute('channels.history', [
