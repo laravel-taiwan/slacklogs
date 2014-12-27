@@ -1,7 +1,7 @@
 <?php
 
-class LogsController extends BaseController {
-
+class LogsController extends BaseController
+{
     /**
      * The format of dates
      *
@@ -52,15 +52,23 @@ class LogsController extends BaseController {
             list($firstLog, $logs, $moreup) = Message\Repository::getLatest($channel);
         }
 
-
         $timeline = Message\Repository::getTimeLine($channel);
+        $view = Request::ajax() ? 'partials.logs' : 'logs';
+        $channels = Channel::all();
+        /*
+        echo '<pre>';
+        dd($channels->toArray());
+        echo '</pre>';
+        */
 
-        return View::make(Request::ajax() ? 'partials.logs' : 'logs', compact('chan', 'logs', 'firstLog', 'moreup', 'moredown', 'timeline'));
+        return View::make($view, compact('channels', 'chan', 'logs', 'firstLog', 'moreup', 'moredown', 'timeline'));
     }
 
     public function search($chan, $q = null)
     {
-        if (! $q) return $this->showChannel($chan);
+        if (! $q) {
+            return $this->showChannel($chan);
+        }
 
         $channel = Channel::where('name', $chan)->firstOrFail();
 
@@ -85,7 +93,7 @@ class LogsController extends BaseController {
         $log = Message::findOrFail($id);
 
         // Build the query to fetch logs with
-        if ($direction == 'up') {
+        if ($direction === 'up') {
             $logs = Message::where('channel', $channel->sid)
                 ->where('ts', '<', "$log->ts")
                 ->orderBy('ts', 'desc')
@@ -103,15 +111,15 @@ class LogsController extends BaseController {
 
         $loadMore = null;
 
-        if (count($logs) == $this->ajaxLoad) {
+        if (count($logs) === $this->ajaxLoad) {
             $loadMore = end($logs)->_id;
         }
 
-        if ($direction == 'up')
+        if ($direction === 'up') {
             $logs = array_reverse($logs);
+        }
 
         return View::make('partials.logs', compact('chan', 'logs'))
             ->with('more' . $direction, $loadMore);
     }
-
 }

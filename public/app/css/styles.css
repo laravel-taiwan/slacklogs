@@ -75,41 +75,50 @@ body {
   width: 70%;
   float: left; }
 
-.timeline {
+.timeline, .channel {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: right;
-  margin-top: 6.5rem;
-  overflow-y: scroll;
+  margin-top: 1.5rem;
   padding: 1rem;
-  position: fixed;
+  position: relative;
   right: 0;
   width: 20%;
   background-color: #272727; }
-  .timeline ul {
+  .timeline ul, .channel ul {
     list-style-type: none;
     margin: 1rem 0;
     padding: 0; }
     .timeline ul ul {
       display: none; }
-  .timeline li {
+  .timeline li, .channel li {
     cursor: pointer; }
-  .timeline li li {
+  .timeline li li, .channel li li {
     padding-left: 1rem;
     border-left: 5px solid rgba(255, 255, 255, 0.05); }
-  .timeline .timeline-year {
+  .channel .all, .timeline .timeline-year {
     font-size: 1.3rem;
     margin-left: 1rem; }
-  .timeline .timeline-month {
+  .channel .title, .timeline .timeline-month {
     font-size: 1.2rem; }
   .timeline .timeline-day {
     font-size: 1.1rem; }
-  .timeline a {
+  .timeline a, .channel a {
     color: white;
     text-decoration: none; }
-  .timeline li:hover > a, .timeline li.current > a, .timeline a:hover {
+  .timeline li:hover > a, .timeline li.current > a, .timeline a:hover,
+  .channel li:hover > a, .channel li.current > a, .channel a:hover {
     color: #DB613B; }
+
+.channel {
+  margin-top: 6.5rem;
+}
+
+.timeline {
+  max-height: 500px;
+  overflow-y: scroll;
+}
 
 .logs {
   list-style-type: none;

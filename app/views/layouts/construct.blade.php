@@ -21,6 +21,7 @@
     <main class='content'>
         @yield('content')
     </main>
+    @yield('channel')
     @yield('timeline')
 </section>
 
