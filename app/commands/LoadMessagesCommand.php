@@ -42,7 +42,7 @@ class LoadMessagesCommand extends Command
         $interactor = new CurlInteractor();
         $interactor->setResponseFactory(new SlackResponseFactory());
 
-        $commander = new Commander('xoxp-3246222755-3289345650-3292375155-6438ef', $interactor);
+        $commander = new Commander($_ENV['SLACK_KEY'], $interactor);
 
         $channels = Channel::where('is_member', true)->get();
 
