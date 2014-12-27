@@ -3,5 +3,5 @@
 @elseif ($log->subtype == 'channel_leave')
     {{ $log->getUser() }} leave channal..
 @else
-<span class="log-entry-username">{{ $log->getUser() }}</span> : {{{ $log->text }}}
+<span class="log-entry-username">{{ $log->getUser() }}</span> : {{ Helpers::parseText($log->text) }}
 @endif
