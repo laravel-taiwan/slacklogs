@@ -4,11 +4,9 @@ use Frlnc\Slack\Core\Commander;
 use Frlnc\Slack\Http\CurlInteractor;
 use Frlnc\Slack\Http\SlackResponseFactory;
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 
-class LoadMessagesCommand extends Command {
-
+class LoadMessagesCommand extends Command
+{
     /**
      * The console command name.
      *
@@ -21,7 +19,7 @@ class LoadMessagesCommand extends Command {
      *
      * @var string
      */
-    protected $description = 'Command description.';
+    protected $description = 'Load Slack Messages.';
 
     /**
      * Create a new command instance.
@@ -41,45 +39,41 @@ class LoadMessagesCommand extends Command {
     public function fire()
     {
         //
-        $interactor = new CurlInteractor;
-        $interactor->setResponseFactory(new SlackResponseFactory);
+        $interactor = new CurlInteractor();
+        $interactor->setResponseFactory(new SlackResponseFactory());
 
         $commander = new Commander('xoxp-3246222755-3289345650-3292375155-6438ef', $interactor);
 
-
         $channels = Channel::where('is_member', true)->get();
 
-        foreach ($channels as $channel)
-        {
+        foreach ($channels as $channel) {
             $latest = $channel->latest ?: 0;
 
             do {
                 $response = $commander->execute('channels.history', [
-                    'channel'   => $channel->sid,
-                    'oldest'    => $latest,
-                    'count'     => 1000
+                    'channel' => $channel->sid,
+                    'oldest'  => $latest,
+                    'count'   => 1000
                 ]);
 
                 $responseBody = $response->getBody();
 
-                foreach($responseBody['messages'] as $msg) {
+                foreach ($responseBody['messages'] as $msg) {
                     $latest = ($msg['ts'] > $latest) ? $msg['ts'] : $latest;
 
-                    $message = new Message;
+                    $message = new Message();
 
-                    foreach($msg as $k => $v) {
+                    foreach ($msg as $k => $v) {
                         $message->{$k} = is_string($v) ? $v : (object) $v;
                     }
 
                     $message->channel = $channel->sid;
                     $message->save();
                 }
-
-            } while($responseBody['has_more']);
+            } while ($responseBody['has_more']);
 
             $channel->latest = $latest;
             $channel->save();
-
         }
     }
 
@@ -90,8 +84,8 @@ class LoadMessagesCommand extends Command {
      */
     protected function getArguments()
     {
-        return array(
-        );
+        return [
+        ];
     }
 
     /**
@@ -101,8 +95,7 @@ class LoadMessagesCommand extends Command {
      */
     protected function getOptions()
     {
-        return array(
-        );
+        return [
+        ];
     }
-
 }
