@@ -54,12 +54,7 @@ class LogsController extends BaseController
 
         $timeline = Message\Repository::getTimeLine($channel);
         $view = Request::ajax() ? 'partials.logs' : 'logs';
-        $channels = Channel::all();
-        /*
-        echo '<pre>';
-        dd($channels->toArray());
-        echo '</pre>';
-        */
+        $channels = Channel::where('is_member', true)->get();
 
         return View::make($view, compact('channels', 'chan', 'logs', 'firstLog', 'moreup', 'moredown', 'timeline'));
     }
