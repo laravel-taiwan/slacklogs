@@ -1,15 +1,19 @@
 // sidebar
 //
+aside {
+    margin-top: $header-height;
+    position: fixed;
+    float: right;
+    right: 0;
+    width: 20%;
+}
 
 .sidebar {
     // Structure
     @include box-sizing(border-box);
-    float: right;
-    padding: 1rem;
+    padding: 0.5rem;
+    width: 100%;
     position: relative;
-    margin-top: $header-height;
-    right: 0;
-    width: 20%;
 
     // Appearance
     background-color: lighten($background-color, 2);
@@ -28,15 +32,12 @@
 
     li {
         cursor: pointer;
-        padding: 1px 0px;
+        padding: 2px 0px;
     }
 
     li li {
         padding-left: 1rem;
         border-left: 5px solid rgba(white, .05);
-        &:hover {
-            background-color: rgba(white, .05);
-        }
     }
 
     .title {
@@ -47,7 +48,16 @@
         font-size: 1.2rem;
     }
 
-    // Links --------------------------------------------------------- /
+    .timeline-year {
+        font-size: 1.3rem;
+        margin-left: 1rem;
+    }
+    .timeline-month {
+        font-size: 1.2rem;
+    }
+    .timeline-day {
+        font-size: 1.1rem;
+    }
 
     a {
         color: white;

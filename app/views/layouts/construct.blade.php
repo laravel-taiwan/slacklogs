@@ -21,8 +21,10 @@
     <main class='content'>
         @yield('content')
     </main>
+    <aside>
     @yield('channel')
     @yield('timeline')
+    </aside>
 </section>
 
 <script type="text/javascript" src="/js/all.js"></script>

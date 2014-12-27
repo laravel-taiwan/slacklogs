@@ -16,14 +16,15 @@
     </ul>
 @stop
 
+
 @section('channel')
-    <aside class="sidebar">
+    <div class="sidebar">
         @include('partials.channel')
-    </aside>
+    </div>
 @stop
 
 @section('timeline')
-    <aside class="timeline">
+    <div class="sidebar">
         @include('partials.timeline')
-    </aside>
+    </div>
 @stop
