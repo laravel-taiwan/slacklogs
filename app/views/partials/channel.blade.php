@@ -2,7 +2,7 @@
     <li class="title">
         <a href="#">All Channels</a>
         <ul>
-            @foreach($channels as $index => $channel)
+            @foreach($channels as $channel)
                 @if ($channel->name == $chan)
                     <li class="sub-title current">
                 @else
