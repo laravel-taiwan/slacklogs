@@ -17,7 +17,7 @@
 @stop
 
 @section('channel')
-    <aside class="channel">
+    <aside class="sidebar">
         @include('partials.channel')
     </aside>
 @stop

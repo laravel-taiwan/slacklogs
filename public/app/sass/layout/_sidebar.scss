@@ -1,0 +1,60 @@
+// sidebar
+//
+
+.sidebar {
+    // Structure
+    @include box-sizing(border-box);
+    float: right;
+    padding: 1rem;
+    position: relative;
+    margin-top: $header-height;
+    right: 0;
+    width: 20%;
+
+    // Appearance
+    background-color: lighten($background-color, 2);
+
+    // Lists --------------------------------------------------------- /
+
+    ul {
+        list-style-type: none;
+        margin: 1rem 0;
+        padding: 0;
+
+        ul {
+            display: none;
+        }
+    }
+
+    li {
+        cursor: pointer;
+    }
+    li li {
+        padding-left: 1rem;
+        border-left: 5px solid rgba(white, .05);
+        &:hover {
+            background-color: rgba(white, .05);
+        }
+    }
+
+    .title {
+        font-size: 1.3rem;
+        margin-left: 1rem;
+    }
+    .sub-title {
+        font-size: 1.2rem;
+    }
+
+    // Links --------------------------------------------------------- /
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    li:hover > a,
+    li.current > a,
+    a:hover {
+        color: $orange;
+    }
+}

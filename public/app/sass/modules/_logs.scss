@@ -10,7 +10,7 @@
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	
+
 	a {
 		color: #ccc;
 	}
@@ -57,4 +57,9 @@
 .log-secondary {
 	font-style: italic;
 	color: #34495E;
+}
+
+.timeline {
+    margin-top: 0rem;
+    max-height: 500px;
 }

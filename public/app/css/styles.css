@@ -75,50 +75,76 @@ body {
   width: 70%;
   float: left; }
 
-.timeline, .channel {
+.timeline {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: right;
-  margin-top: 1.5rem;
+  margin-top: 6.5rem;
+  overflow-y: scroll;
   padding: 1rem;
   position: relative;
   right: 0;
   width: 20%;
   background-color: #272727; }
-  .timeline ul, .channel ul {
+  .timeline ul {
     list-style-type: none;
     margin: 1rem 0;
     padding: 0; }
     .timeline ul ul {
       display: none; }
-  .timeline li, .channel li {
+  .timeline li {
     cursor: pointer; }
-  .timeline li li, .channel li li {
+  .timeline li li {
     padding-left: 1rem;
     border-left: 5px solid rgba(255, 255, 255, 0.05); }
-  .channel .all, .timeline .timeline-year {
+  .timeline .timeline-year {
     font-size: 1.3rem;
     margin-left: 1rem; }
-  .channel .title, .timeline .timeline-month {
+  .timeline .timeline-month {
     font-size: 1.2rem; }
   .timeline .timeline-day {
     font-size: 1.1rem; }
-  .timeline a, .channel a {
+  .timeline a {
     color: white;
     text-decoration: none; }
-  .timeline li:hover > a, .timeline li.current > a, .timeline a:hover,
-  .channel li:hover > a, .channel li.current > a, .channel a:hover {
+  .timeline li:hover > a, .timeline li.current > a, .timeline a:hover {
     color: #DB613B; }
 
-.channel {
+.sidebar {
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  padding: 1rem;
+  position: relative;
   margin-top: 6.5rem;
-}
-
-.timeline {
-  max-height: 500px;
-  overflow-y: scroll;
-}
+  right: 0;
+  width: 20%;
+  background-color: #272727; }
+  .sidebar ul {
+    list-style-type: none;
+    margin: 1rem 0;
+    padding: 0; }
+    .sidebar ul ul {
+      display: none; }
+  .sidebar li {
+    cursor: pointer; }
+  .sidebar li li {
+    padding-left: 1rem;
+    border-left: 5px solid rgba(255, 255, 255, 0.05); }
+    .sidebar li li:hover {
+      background-color: rgba(255, 255, 255, 0.05); }
+  .sidebar .title {
+    font-size: 1.3rem;
+    margin-left: 1rem; }
+  .sidebar .sub-title {
+    font-size: 1.2rem; }
+  .sidebar a {
+    color: white;
+    text-decoration: none; }
+  .sidebar li:hover > a, .sidebar li.current > a, .sidebar a:hover {
+    color: #DB613B; }
 
 .logs {
   list-style-type: none;
@@ -153,3 +179,7 @@ body {
 .log-entry-channel_join, .log-entry-channel_leave, .log-entry-quit, .log-entry-part, .log-entry-join, .log-secondary {
   font-style: italic;
   color: #34495E; }
+
+.timeline {
+  margin-top: 0rem;
+  max-height: 500px; }
