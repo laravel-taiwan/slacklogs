@@ -32,6 +32,10 @@ class LogsController extends BaseController {
     {
         $channel = Channel::where('name', $chan)->firstOrFail();
 
+        if (! $channel->is_member) {
+            return "Sorry, @phptwbot is not in this channel. Please /invite @phptwbot in #$channel->name First!";
+        }
+
         $datetime = null;
 
         if ($date) {
