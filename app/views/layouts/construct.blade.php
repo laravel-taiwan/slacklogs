@@ -9,10 +9,9 @@
 
 <header class="header">
     @yield('search-input')
-    <a class="logo" href="http://laravel.com">
+    <a class="logo" href="http://laravel.tw">
         <img src="/app/img/laravel.png">
     </a>
-
     <div class="links">
         Powered by Far · <a href="https://github.com/laravel-taiwan/slacklogs" target="_blank">Fork us on Github</a>
     </div>
