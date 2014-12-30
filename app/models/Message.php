@@ -6,6 +6,9 @@ class Message extends Moloquent {
 
     public function getUser()
     {
+        if ($this->subtype == 'bot_message')
+            return $this->username;
+
         return User::where('sid', $this->user)->first()->name;
     }
 
