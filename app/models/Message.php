@@ -9,6 +9,9 @@ class Message extends Moloquent {
         if ($this->subtype == 'bot_message')
             return $this->username;
 
+        if ($this->user == 'USLACKBOT')
+            return 'slackbot';
+
         return User::where('sid', $this->user)->first()->name;
     }
 
