@@ -16,7 +16,9 @@ class Helpers {
                 list($uid, ) = explode("|", $match[1]);
 
                 $fromText[] = $match[0];
-                $toText[] = '@' . User::where('sid', substr($uid, 1))->first()->name;
+                //if uid non-existent at db, return original uid.
+				$username = ($select = User::where('sid', substr($uid, 1))->first()) == null ? "$uid" : $select->name;
+				$toText[] = $username=='@USLACKBOT' ? '@slackbot' : $username ;
 
                 continue;
             }
