@@ -57,7 +57,7 @@ class LoadMembersCommand extends Command
                 'sid'        => $member['id'],
                 'name'       => $member['name'],
                 'deleted'    => $member['deleted'],
-                'color'      => $member['color'],
+                'color'      => array_get($member, 'color'),
                 'profile'    => (object) $member['profile'],
             ];
 
