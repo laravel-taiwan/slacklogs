@@ -12,7 +12,9 @@ class Message extends Moloquent {
         if ($this->user == 'USLACKBOT')
             return 'slackbot';
 
-        return User::where('sid', $this->user)->first()->name;
+        $user = User::where('sid', $this->user)->first();
+
+        return data_get($user, 'name', $this->username);
     }
 
     public function getText()
