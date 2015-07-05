@@ -14,6 +14,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\Inspire::class,
+        \App\Console\Commands\LoadChannels::class,
+        \App\Console\Commands\LoadMembers::class,
+        \App\Console\Commands\LoadMessages::class,
     ];
 
     /**
