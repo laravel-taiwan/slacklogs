@@ -4,7 +4,15 @@
     "gulp": "^3.8.8"
   },
   "dependencies": {
+    "bootstrap-sass": "^3.0.0",
     "laravel-elixir": "^2.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "laravel-elixir-sass-compass": "^0.3.0",
+    "lodash": "^3.10.0",
+    "moment": "^2.10.3",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "reflux": "^0.2.8",
+    "superagent": "^1.2.0",
+    "sweetalert": "^1.0.1"
   }
 }

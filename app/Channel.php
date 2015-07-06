@@ -4,7 +4,7 @@ namespace App;
 
 class Channel extends \Moloquent
 {
-    protected $connection = 'mongodb';
+    protected $collection = 'channels';
 
     protected $fillable = [
         'sid', 'name', 'created', 'creator', 'is_archived', 'is_general',
@@ -19,6 +19,11 @@ class Channel extends \Moloquent
     public static function getIsMemberChannels()
     {
         return static::isMember()->get();
+    }
+
+    public static function getGeneralChannel()
+    {
+        return static::where('is_general', true)->firstOrFail();
     }
 
 }

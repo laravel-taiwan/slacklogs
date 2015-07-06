@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5c6026b96e6fa11a641b51a6ba976f5e",
+    "hash": "a98dcbce8563f1d25cd265819f905fd3",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -217,6 +217,49 @@
             "time": "2014-12-20 21:24:13"
         },
         {
+            "name": "frlnc/php-slack",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Frlnc/php-slack.git",
+                "reference": "b73a6b6ea1282a3f70d29d7c2c77e2d3dc89c88d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Frlnc/php-slack/zipball/b73a6b6ea1282a3f70d29d7c2c77e2d3dc89c88d",
+                "reference": "b73a6b6ea1282a3f70d29d7c2c77e2d3dc89c88d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Frlnc\\Slack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Connor Parks",
+                    "email": "connor@connorvg.tv"
+                }
+            ],
+            "description": "A lightweight PHP implementation of Slack's API.",
+            "keywords": [
+                "slack"
+            ],
+            "time": "2015-04-17 18:43:15"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -302,6 +345,64 @@
                 }
             ],
             "time": "2015-04-20 18:58:01"
+        },
+        {
+            "name": "jenssegers/mongodb",
+            "version": "v2.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/laravel-mongodb.git",
+                "reference": "e2bc57c374845ed18ce55e4d8df4b676ae8bac73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/laravel-mongodb/zipball/e2bc57c374845ed18ce55e4d8df4b676ae8bac73",
+                "reference": "e2bc57c374845ed18ce55e4d8df4b676ae8bac73",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "^5.0",
+                "illuminate/database": "^5.0",
+                "illuminate/events": "^5.0",
+                "illuminate/support": "^5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "*",
+                "orchestra/testbench": "3.0.*",
+                "satooshi/php-coveralls": "*"
+            },
+            "suggest": {
+                "jenssegers/mongodb-sentry": "Add Sentry support to Laravel-MongoDB",
+                "jenssegers/mongodb-session": "Add MongoDB session support to Laravel-MongoDB"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Jenssegers\\Mongodb": "src/",
+                    "Jenssegers\\Eloquent": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "http://jenssegers.be"
+                }
+            ],
+            "description": "A MongoDB based Eloquent model and Query builder for Laravel 4",
+            "keywords": [
+                "database",
+                "eloquent",
+                "laravel",
+                "model",
+                "mongo",
+                "mongodb"
+            ],
+            "time": "2015-05-25 09:32:48"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -572,6 +673,69 @@
                 "storage"
             ],
             "time": "2015-06-07 21:27:37"
+        },
+        {
+            "name": "league/fractal",
+            "version": "0.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/fractal.git",
+                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/0a51dcb6398dc2377d086210d0624996a1df8322",
+                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "illuminate/contracts": "~5.0",
+                "mockery/mockery": "~0.9",
+                "pagerfanta/pagerfanta": "~1.0.0",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5",
+                "zendframework/zend-paginator": "~2.3"
+            },
+            "suggest": {
+                "illuminate/pagination": "The Illuminate Pagination component.",
+                "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+                "zendframework/zend-paginator": "Zend Framework Paginator"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Fractal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "me@philsturgeon.uk",
+                    "homepage": "http://philsturgeon.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle the output of complex data structures ready for API output.",
+            "homepage": "http://fractal.thephpleague.com/",
+            "keywords": [
+                "api",
+                "json",
+                "league",
+                "rest"
+            ],
+            "time": "2015-03-19 15:16:43"
         },
         {
             "name": "monolog/monolog",

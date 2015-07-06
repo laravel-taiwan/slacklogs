@@ -2,3 +2,7 @@
 /node_modules
 Homestead.yaml
 .env
+.idea
+.sass-cache
+public/build
+public/css

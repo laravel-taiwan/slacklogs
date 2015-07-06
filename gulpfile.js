@@ -1,5 +1,8 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-browserify').init('bf');
+require('laravel-elixir-sass-compass');
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -12,5 +15,15 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix
+        .compass('app.sass', "public/css", {
+            sass: "resources/assets/sass"
+        })
+        .bf('apps/app.jsx', {
+            debug: true,
+            transform: ['reactify'],
+            output: 'public/js',
+            rename: 'app.js'
+        })
+        .version(['css/app.css', 'js/app.js']);
 });
