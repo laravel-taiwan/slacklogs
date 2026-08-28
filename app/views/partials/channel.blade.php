@@ -8,7 +8,7 @@
                 @else
                     <li class="sub-title">
                 @endif
-                    <a href="{{ URL::to($channel->name) }}">
+                    <a href="{{ url($channel->name) }}">
                         {{ $channel->name }}
                     </a>
                 </li>
