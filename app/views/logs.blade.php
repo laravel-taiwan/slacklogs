@@ -6,7 +6,7 @@
 
 @section('search-input')
 <input name="search" value="{{ isset($search) ? $search : null }}" class="header-search"
-       action="{{ URL::to($chan . '/search/') }}" contenteditable placeholder="Search PHP Taiwan Slack logs @yield('page_subtitle')" autofocus autocomplete="off"
+       action="{{ url($chan . '/search') }}" contenteditable placeholder="Search PHP Taiwan Slack logs @yield('page_subtitle')" autofocus autocomplete="off"
        spellcheck="false">
 @stop
 

@@ -5,15 +5,15 @@
             <ul>
                 @foreach($months as $month => $days)
                     <li class="timeline-month">
-                        <a href="#">{{ Carbon::createFromDate(2012, $month)->format('F') }}</a>
+                        <a href="#">{{ \Carbon\CarbonImmutable::create(2012, (int) $month, 1)->format('F') }}</a>
                         <ul>
                             @foreach($days as $day => $date)
-                                @if (Str::contains(URL::full(), $date->format('Y-m-d')) or $date->format('Y-m-d') == date('Y-m-d'))
+                                @if (\Illuminate\Support\Str::contains(url()->full(), $date->format('Y-m-d')) or $date->isToday())
                                     <li class="timeline-day current">
                                 @else
                                     <li class="timeline-day">
                                 @endif
-                                    <a href="{{ URL::to("/$chan/" . $date->format('Y-m-d')) }}">
+                                    <a href="{{ url("/$chan/" . $date->format('Y-m-d')) }}">
                                         {{ $date->format('d l') }}
                                     </a>
                                 </li>
